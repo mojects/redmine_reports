@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 
 $params = array();
 $params['hosts'] = array (
-    'b0261e1559a7cf53a4db1af1e7e8affe-us-east-1.foundcluster.com:9200' // Domain + Port
+    '9069069d703882de3b2526c586dcf1e6-us-east-1.foundcluster.com:9200' // Domain + Port
 );
 
 $client = new Elasticsearch\Client($params);
