@@ -2,10 +2,7 @@
 
 define("DECIMAL_DELIMITER", ".");
 
-
-mysql_connect('sysdb1ha.gtflix', 'redmine', 'eJ36WdPUhn2Ru7tB') or
-    die('Nie można się połączyć: ' . mysql_error());
-mysql_select_db('redmine');
+include("db.php");
 
 mysql_query("set charset utf8;");
 
