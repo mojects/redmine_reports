@@ -22,11 +22,12 @@ select
   t.hours,
   t.spent_on,
   t.id entry_id
-from  issues  i
-  JOIN projects p ON (i.`project_id` = p.`id`)
-  JOIN time_entries t ON (i.id = t.issue_id)
+from  
+  time_entries t
+  JOIN projects p ON (t.`project_id` = p.`id`)
+LEFT JOIN issues i ON (i.id = t.issue_id)
   JOIN users    u ON (t.`user_id` = u.`id`)
-  JOIN trackers tr ON (i.tracker_id = tr.id)
+LEFT  JOIN trackers tr ON (i.tracker_id = tr.id)
 where 1
   
 ";

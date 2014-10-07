@@ -15,16 +15,9 @@ header('Content-Type:text/plain');
 
 mysql_data_seek($result, 0);
 
-$action["index"] = array(
-    "_index" => "timesheet1",
-    "_type" => "timesheet1"
-    );
-
 $out = array();
 
 while ($row = mysql_fetch_assoc($result)) {
-
-    $action["index"]["_id"] = $row['entry_id'];
 
     $i = array();
     $i['user'] = $row['user'];
@@ -42,7 +35,6 @@ while ($row = mysql_fetch_assoc($result)) {
     );
     $params['body'][] = $i;
 
-    $out[] = json_encode($action);
     $out[] = json_encode($i);
     
 }
